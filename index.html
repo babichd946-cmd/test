@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD Товари</title>
+    <script src="script.js" defer></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f9f9f9; }
+        h2 { color: #333; }
+        .form-group { margin-bottom: 10px; }
+        label { display: inline-block; width: 100px; }
+        input, textarea { padding: 5px; width: 250px; }
+        button { padding: 6px 12px; margin-right: 5px; cursor: pointer; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: #fff; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background: #eee; }
+        .error { color: red; margin-top: 10px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h2>Управління товарами CRUD</h2>
+
+    <!-- Форма додавання / редагування -->
+    <div style="background: #fff; padding: 15px; border: 1px solid #ccc; width: 400px;">
+        <input type="hidden" id="editIndex" value="-1">
+        <div class="form-group">
+            <label>ID:</label>
+            <input type="text" id="productId">
+        </div>
+        <div class="form-group">
+            <label>Назва:</label>
+            <input type="text" id="productName">
+        </div>
+        <div class="form-group">
+            <label>Опис:</label>
+            <textarea id="productDesc"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Ціна (грн):</label>
+            <input type="number" id="productPrice" step="0.01">
+        </div>
+        <div class="form-group">
+            <label>Дата дод.:</label>
+            <input type="date" id="productDate">
+        </div>
+        <button id="saveBtn">Зберегти товар</button>
+        <button id="clearBtn">Очистити</button>
+        <div id="errorMsg" class="error"></div>
+    </div>
+
+    <!-- Кнопки сортування -->
+    <div style="margin-top: 20px;">
+        <strong>Сортувати за:</strong>
+        <button id="sortNameBtn">Назвою (Name)</button>
+        <button id="sortPriceBtn">Ціною (Price)</button>
+    </div>
+
+    <!-- Таблиця товарів -->
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Назва</th>
+                <th>Опис</th>
+                <th>Ціна</th>
+                <th>Дата додавання</th>
+                <th>Дії</th>
+            </tr>
+        </thead>
+        <tbody id="productTableBody"></tbody>
+    </table>
+
+</body>
+</html>
