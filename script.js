@@ -38,7 +38,7 @@ function renderTable() {
 function saveProduct() {
     const editIdx = parseInt(document.getElementById('editIndex').value);
     const id = document.getElementById('productId').value.trim();
-    const name = document.getElementById('productName').value.trim();
+	const name = document.getElementById('productName').value;
     const desc = document.getElementById('productDesc').value.trim();
     const priceVal = document.getElementById('productPrice').value;
     const date = document.getElementById('productDate').value;
